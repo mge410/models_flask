@@ -1,0 +1,11 @@
+img{
+    position: absolute;
+}
+h2{
+    margin-left: 160px;
+}
+
+.btn-primary{
+    color: pink;
+    background-color: blue;
+}

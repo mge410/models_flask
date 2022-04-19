@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block content %}
+<form action="" method="post" novalidate>
+    {{ form.hidden_tag() }}
+    <p>
+        {{ form.id_ac.label }}<br>
+        {{ form.id_ac(class="form-control") }}<br>
+        {% for error in form.id_ac.errors %}
+    <div class="alert alert-danger" role="alert">
+        {{ error }}
+    </div>
+    {% endfor %}
+    </p>
+    <p>
+        {{ form.password_ac.label }}<br>
+        {{ form.password_ac(class="form-control", type="password") }}<br>
+        {% for error in form.password_ac.errors %}
+    <div class="alert alert-danger" role="alert">
+        {{ error }}
+    </div>
+    {% endfor %}
+    </p>
+    <p>
+        {{ form.id_cum.label }}<br>
+        {{ form.id_cum(class="form-control", type="password") }}<br>
+        {% for error in form.id_cum.errors %}
+    <div class="alert alert-danger" role="alert">
+        {{ error }}
+    </div>
+    {% endfor %}
+    </p>
+    <p>
+        {{ form.token.label }}<br>
+        {{ form.token(class="form-control", type="password") }}<br>
+        {% for error in form.token.errors %}
+    <div class="alert alert-danger" role="alert">
+        {{ error }}
+    </div>
+    {% endfor %}
+    </p>
+    <p class="btn">{{ form.submit(type="submit", class="btn btn-primary") }}</p>
+</form>
+{% endblock %}
