@@ -1,6 +1,5 @@
+from data.db_session import SqlAlchemyBase
 import sqlalchemy
-
-from .db_session import SqlAlchemyBase
 
 
 class User(SqlAlchemyBase):

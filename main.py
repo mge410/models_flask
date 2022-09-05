@@ -1,6 +1,6 @@
-from data import db_session
-from data.jobs import Jobs
-from data.users import User
+import data.db_session
+import data.jobs
+import data.users
 from flask import Flask
 from flask import render_template
 
@@ -10,11 +10,11 @@ app.config['SECRET_KEY'] = 'yandexlyceum_secret_key'
 
 @app.route('/')
 def index():
-    db_session.global_init('db/blogs.db')
+    data.db_session.global_init('db/blogs.db')
 
-    db_sess = db_session.create_session()
-    users = db_sess.query(User)
-    jobs = db_sess.query(Jobs)
+    db_sess = data.db_session.create_session()
+    users = db_sess.query(data.users.User)
+    jobs = db_sess.query(data.jobs.Jobs)
 
     return render_template('index.html', jobs=jobs, users=users)
 
