@@ -1,7 +1,7 @@
 import sqlalchemy as sa
 import sqlalchemy.ext.declarative as dec
-import sqlalchemy.orm as orm
 from sqlalchemy.orm import Session
+import sqlalchemy.orm as orm
 
 SqlAlchemyBase = dec.declarative_base()
 
